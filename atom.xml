@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>纵横天地</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://fxdswz.top/"/>
+  <updated>2017-08-30T01:46:31.590Z</updated>
+  <id>http://fxdswz.top/</id>
+  
+  <author>
+    <name>零号</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Termux美化及一些工具</title>
+    <link href="http://fxdswz.top/2017/08/30/Termux/"/>
+    <id>http://fxdswz.top/2017/08/30/Termux/</id>
+    <published>2017-08-30T01:46:31.600Z</published>
+    <updated>2017-08-30T01:46:31.590Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Termux简介"><a href="#Termux简介" class="headerlink" title="Termux简介"></a>Termux简介</h1><p>不同于终端，Termux是一个寄居在安卓系统中的阉割版 <span class="label label-orange">Linux</span><br>手机里的<code>/data/data/com.termux/files/</code>目录对应的就是 <span class="label label-orange">Linux</span> 的根目录<code>/</code></p>
+<p>在自己的地方,Termux拥有绝对的权限，但是出去后需要root才能进行操作<br><a id="more"></a></p>
+<hr>
+<h1 id="安装termux"><a href="#安装termux" class="headerlink" title="安装termux"></a>安装termux</h1><p><a href="https://play.google.com/store/apps/details?id=com.termux" target="_blank" rel="external">Play商店</a> <a href="https://f-droid.org/packages/com.termux/" target="_blank" rel="external">F-droid</a></p>
+<h1 id="推荐工具"><a href="#推荐工具" class="headerlink" title="推荐工具"></a>推荐工具</h1><p><a href="https://www.coolapk.com/apk/com.speedsoftware.rootexplorer" target="_blank" rel="external">RE管理器</a><br><a href="https://www.coolapk.com/apk/com.sonelli.juicessh" target="_blank" rel="external">JuiceSSH</a></p>
+<h1 id="可选工具"><a href="#可选工具" class="headerlink" title="可选工具"></a>可选工具</h1><p>更舒服的编码键盘<br><a href="https://play.google.com/store/apps/details?id=org.pocketworkstation.pckeyboard" target="_blank" rel="external">Hacker’s Keyboard</a><br>快速切换键盘（通知栏输入法切换）<br><a href="https://play.google.com/store/apps/details?id=com.appaholics.keyboardswitch" target="_blank" rel="external">Quick Keyboard Swith</a><br>telnet终端工具<br><a href="https://play.google.com/store/apps/details?id=de.onyxbits.remotekeyboard" target="_blank" rel="external">Remote Keyboard</a><br>IDE集成工具<br><a href="https://play.google.com/store/apps/details?id=com.spartacusrex.spartacuside" target="_blank" rel="external">Terminal IDE</a></p>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">VOL↑ + Q  调出软键盘</div><div class="line">VOL↑ + W  上</div><div class="line">VOL↑ + S  下</div><div class="line">VOL↑ + A  左</div><div class="line">VOL↑ + D  右</div></pre></td></tr></table></figure>
+<h1 id="基础环境的配置"><a href="#基础环境的配置" class="headerlink" title="基础环境的配置"></a>基础环境的配置</h1><h4 id="建议翻墙操作-部分内容在墙外面下载比较慢"><a href="#建议翻墙操作-部分内容在墙外面下载比较慢" class="headerlink" title="建议翻墙操作,部分内容在墙外面下载比较慢"></a>建议翻墙操作,部分内容在墙外面下载比较慢</h4><p>Termux第一次启动会下载系统，需要等待安装，如果太慢可以试试翻墙<br>安装好后，执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt update</div><div class="line">apt upgrade</div></pre></td></tr></table></figure></p>
+<h1 id="启用外置储存"><a href="#启用外置储存" class="headerlink" title="启用外置储存"></a>启用外置储存</h1><p>Android6.0以上会弹出是否授权，执行这条命令确保termux在最前端(当前Activity)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">termux-setup-storage</div></pre></td></tr></table></figure></p>
+<p>成功拿到储存权限后会在家目录生成storage目录，并且生成若干目录，软连接都指向外置内存卡相应目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ ls -lh</div><div class="line"></div><div class="line">total 24K</div><div class="line">lrwxrwxrwx 1 u0_a143 u0_a143 26 Aug 25 19:39 dcim -&gt; /storage/emulated/0/DCIM</div><div class="line">lrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 downloads -&gt; /storage/emulated/0/Download</div><div class="line">lrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 movies -&gt; /storage/emulated/0/Movies</div><div class="line">lrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 music -&gt; /storage/emulated/0/Music</div><div class="line">lrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 pictures -&gt; /storage/emulated/0/Pictures</div><div class="line">lrwxrwxrwx 1 u0_a143 u0_a143 22 Aug 25 19:39 shared -&gt; /storage/emulated/0</div></pre></td></tr></table></figure></p>
+<p>为了方便文件传输可以为qq创建一个软连接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv qq</div></pre></td></tr></table></figure></p>
+<h1 id="美化Termux————oh-my-zsh"><a href="#美化Termux————oh-my-zsh" class="headerlink" title="美化Termux————oh-my-zsh"></a>美化Termux————oh-my-zsh</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pkg install crul</div><div class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)</span>"</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Termux简介&quot;&gt;&lt;a href=&quot;#Termux简介&quot; class=&quot;headerlink&quot; title=&quot;Termux简介&quot;&gt;&lt;/a&gt;Termux简介&lt;/h1&gt;&lt;p&gt;不同于终端，Termux是一个寄居在安卓系统中的阉割版 &lt;span class=&quot;label label-orange&quot;&gt;Linux&lt;/span&gt;&lt;br&gt;手机里的&lt;code&gt;/data/data/com.termux/files/&lt;/code&gt;目录对应的就是 &lt;span class=&quot;label label-orange&quot;&gt;Linux&lt;/span&gt; 的根目录&lt;code&gt;/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在自己的地方,Termux拥有绝对的权限，但是出去后需要root才能进行操作&lt;br&gt;
+    
+    </summary>
+    
+      <category term="手机搞事情" scheme="http://fxdswz.top/categories/%E6%89%8B%E6%9C%BA%E6%90%9E%E4%BA%8B%E6%83%85/"/>
+    
+    
+      <category term="Termux" scheme="http://fxdswz.top/tags/Termux/"/>
+    
+      <category term="Android" scheme="http://fxdswz.top/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用juiceSSH连接termux</title>
+    <link href="http://fxdswz.top/2017/08/29/Termux-ssh/"/>
+    <id>http://fxdswz.top/2017/08/29/Termux-ssh/</id>
+    <published>2017-08-29T08:57:44.050Z</published>
+    <updated>2017-08-29T08:57:44.050Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="启用ssh"><a href="#启用ssh" class="headerlink" title="启用ssh"></a>启用ssh</h1><p>termux的sshd默认监听8022端口，并且只支持密钥登陆<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt install openssl-tool openssh -y</div><div class="line">sshd</div><div class="line">netstat -ntlp |grep sshd</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="juiceSSH连接termux"><a href="#juiceSSH连接termux" class="headerlink" title="juiceSSH连接termux"></a>juiceSSH连接termux</h1><p><img src="http://ovdz3thou.bkt.clouddn.com/juicessh01.png" alt=""><br>更新连接<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh02.png" alt=""><br>更新认证<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh03.png" alt=""><br>更新密钥,生成，密钥格式rsa，长度1024bit<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh04.png" alt=""><br>导出密钥，追加到authorized_keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat &gt;&gt; ~/.ssh/authorized_keys 把中文换成你的公钥</div></pre></td></tr></table></figure></p>
+<p>成功会直接进入终端，失败会一直弹出输入密码。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;启用ssh&quot;&gt;&lt;a href=&quot;#启用ssh&quot; class=&quot;headerlink&quot; title=&quot;启用ssh&quot;&gt;&lt;/a&gt;启用ssh&lt;/h1&gt;&lt;p&gt;termux的sshd默认监听8022端口，并且只支持密钥登陆&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt install openssl-tool openssh -y&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sshd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;netstat -ntlp |grep sshd&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="手机搞事情" scheme="http://fxdswz.top/categories/%E6%89%8B%E6%9C%BA%E6%90%9E%E4%BA%8B%E6%83%85/"/>
+    
+    
+      <category term="Termux" scheme="http://fxdswz.top/tags/Termux/"/>
+    
+      <category term="Android" scheme="http://fxdswz.top/tags/Android/"/>
+    
+  </entry>
+  
+</feed>
