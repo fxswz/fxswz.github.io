@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Termux美化及一些工具]]></title>
+    <url>%2F2017%2F08%2F30%2FTermux%2F</url>
+    <content type="text"><![CDATA[Termux简介不同于终端，Termux是一个寄居在安卓系统中的阉割版 Linux手机里的/data/data/com.termux/files/目录对应的就是 Linux 的根目录/ 在自己的地方,Termux拥有绝对的权限，但是出去后需要root才能进行操作 安装termuxPlay商店 F-droid 推荐工具RE管理器JuiceSSH 可选工具更舒服的编码键盘Hacker’s Keyboard快速切换键盘（通知栏输入法切换）Quick Keyboard Swithtelnet终端工具Remote KeyboardIDE集成工具Terminal IDE 基本操作12345VOL↑ + Q 调出软键盘VOL↑ + W 上VOL↑ + S 下VOL↑ + A 左VOL↑ + D 右 基础环境的配置建议翻墙操作,部分内容在墙外面下载比较慢Termux第一次启动会下载系统，需要等待安装，如果太慢可以试试翻墙安装好后，执行12apt updateapt upgrade 启用外置储存Android6.0以上会弹出是否授权，执行这条命令确保termux在最前端(当前Activity)1termux-setup-storage 成功拿到储存权限后会在家目录生成storage目录，并且生成若干目录，软连接都指向外置内存卡相应目录123456789$ ls -lhtotal 24Klrwxrwxrwx 1 u0_a143 u0_a143 26 Aug 25 19:39 dcim -&gt; /storage/emulated/0/DCIMlrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 downloads -&gt; /storage/emulated/0/Downloadlrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 movies -&gt; /storage/emulated/0/Movieslrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 music -&gt; /storage/emulated/0/Musiclrwxrwxrwx 1 u0_a143 u0_a143 30 Aug 25 19:39 pictures -&gt; /storage/emulated/0/Pictureslrwxrwxrwx 1 u0_a143 u0_a143 22 Aug 25 19:39 shared -&gt; /storage/emulated/0 为了方便文件传输可以为qq创建一个软连接1ln -s /data/data/com.termux/files/home/storage/shared/tencent/QQfile_recv qq 美化Termux————oh-my-zsh12pkg install crulsh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"]]></content>
+      <categories>
+        <category>手机搞事情</category>
+      </categories>
+      <tags>
+        <tag>Termux</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用juiceSSH连接termux]]></title>
+    <url>%2F2017%2F08%2F29%2FTermux-ssh%2F</url>
+    <content type="text"><![CDATA[启用sshtermux的sshd默认监听8022端口，并且只支持密钥登陆123apt install openssl-tool openssh -ysshdnetstat -ntlp |grep sshd juiceSSH连接termux更新连接更新认证更新密钥,生成，密钥格式rsa，长度1024bit导出密钥，追加到authorized_keys1cat &gt;&gt; ~/.ssh/authorized_keys 把中文换成你的公钥 成功会直接进入终端，失败会一直弹出输入密码。]]></content>
+      <categories>
+        <category>手机搞事情</category>
+      </categories>
+      <tags>
+        <tag>Termux</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+</search>
