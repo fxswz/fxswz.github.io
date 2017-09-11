@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fxdswz.top/"/>
-  <updated>2017-08-30T09:18:54.160Z</updated>
+  <updated>2017-09-11T02:43:47.960Z</updated>
   <id>http://fxdswz.top/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>用juiceSSH连接termux</title>
+    <link href="http://fxdswz.top/2017/09/11/Termux-ssh/"/>
+    <id>http://fxdswz.top/2017/09/11/Termux-ssh/</id>
+    <published>2017-09-11T02:43:47.960Z</published>
+    <updated>2017-09-11T02:43:47.960Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="启用ssh"><a href="#启用ssh" class="headerlink" title="启用ssh"></a>启用ssh</h1><p>termux的sshd默认监听8022端口，并且只支持密钥登陆<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt install openssl-tool openssh -y</div><div class="line">sshd</div><div class="line">netstat -ntlp |grep sshd</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="juiceSSH连接termux"><a href="#juiceSSH连接termux" class="headerlink" title="juiceSSH连接termux"></a>juiceSSH连接termux</h1><p><img src="http://ovdz3thou.bkt.clouddn.com/juicessh01.png" alt=""><br>更新连接<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh02.png" alt=""><br>更新认证<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh03.png" alt=""><br>更新密钥,生成，密钥格式rsa，长度1024bit<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh04.png" alt=""><br>导出密钥，追加到authorized_keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat &gt;&gt; ~/.ssh/authorized_keys 把中文换成你的公钥</div></pre></td></tr></table></figure></p>
+<p>成功会直接进入终端，失败会一直弹出输入密码。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;启用ssh&quot;&gt;&lt;a href=&quot;#启用ssh&quot; class=&quot;headerlink&quot; title=&quot;启用ssh&quot;&gt;&lt;/a&gt;启用ssh&lt;/h1&gt;&lt;p&gt;termux的sshd默认监听8022端口，并且只支持密钥登陆&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt install openssl-tool openssh -y&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sshd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;netstat -ntlp |grep sshd&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="手机搞事情" scheme="http://fxdswz.top/categories/%E6%89%8B%E6%9C%BA%E6%90%9E%E4%BA%8B%E6%83%85/"/>
+    
+    
+      <category term="Termux" scheme="http://fxdswz.top/tags/Termux/"/>
+    
+      <category term="Android" scheme="http://fxdswz.top/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Termux美化及一些工具</title>
-    <link href="http://fxdswz.top/2017/08/30/Termux/"/>
-    <id>http://fxdswz.top/2017/08/30/Termux/</id>
-    <published>2017-08-30T09:18:54.170Z</published>
-    <updated>2017-08-30T09:18:54.160Z</updated>
+    <link href="http://fxdswz.top/2017/09/11/Termux/"/>
+    <id>http://fxdswz.top/2017/09/11/Termux/</id>
+    <published>2017-09-11T02:43:47.960Z</published>
+    <updated>2017-09-11T02:43:47.960Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Termux简介"><a href="#Termux简介" class="headerlink" title="Termux简介"></a>Termux简介</h1><p>不同于终端，Termux是一个寄居在安卓系统中的阉割版 <span class="label label-orange">Linux</span><br>手机里的<code>/data/data/com.termux/files/</code>目录对应的就是 <span class="label label-orange">Linux</span> 的根目录<code>/</code></p>
 <p>在自己的地方,Termux拥有绝对的权限，但是出去后需要root才能进行操作<br><a id="more"></a></p>
@@ -40,34 +68,6 @@
     
       &lt;h1 id=&quot;Termux简介&quot;&gt;&lt;a href=&quot;#Termux简介&quot; class=&quot;headerlink&quot; title=&quot;Termux简介&quot;&gt;&lt;/a&gt;Termux简介&lt;/h1&gt;&lt;p&gt;不同于终端，Termux是一个寄居在安卓系统中的阉割版 &lt;span class=&quot;label label-orange&quot;&gt;Linux&lt;/span&gt;&lt;br&gt;手机里的&lt;code&gt;/data/data/com.termux/files/&lt;/code&gt;目录对应的就是 &lt;span class=&quot;label label-orange&quot;&gt;Linux&lt;/span&gt; 的根目录&lt;code&gt;/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在自己的地方,Termux拥有绝对的权限，但是出去后需要root才能进行操作&lt;br&gt;
-    
-    </summary>
-    
-      <category term="手机搞事情" scheme="http://fxdswz.top/categories/%E6%89%8B%E6%9C%BA%E6%90%9E%E4%BA%8B%E6%83%85/"/>
-    
-    
-      <category term="Termux" scheme="http://fxdswz.top/tags/Termux/"/>
-    
-      <category term="Android" scheme="http://fxdswz.top/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用juiceSSH连接termux</title>
-    <link href="http://fxdswz.top/2017/08/29/Termux-ssh/"/>
-    <id>http://fxdswz.top/2017/08/29/Termux-ssh/</id>
-    <published>2017-08-29T08:57:44.050Z</published>
-    <updated>2017-08-29T08:57:44.050Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="启用ssh"><a href="#启用ssh" class="headerlink" title="启用ssh"></a>启用ssh</h1><p>termux的sshd默认监听8022端口，并且只支持密钥登陆<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt install openssl-tool openssh -y</div><div class="line">sshd</div><div class="line">netstat -ntlp |grep sshd</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h1 id="juiceSSH连接termux"><a href="#juiceSSH连接termux" class="headerlink" title="juiceSSH连接termux"></a>juiceSSH连接termux</h1><p><img src="http://ovdz3thou.bkt.clouddn.com/juicessh01.png" alt=""><br>更新连接<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh02.png" alt=""><br>更新认证<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh03.png" alt=""><br>更新密钥,生成，密钥格式rsa，长度1024bit<br><img src="http://ovdz3thou.bkt.clouddn.com/juicessh04.png" alt=""><br>导出密钥，追加到authorized_keys<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat &gt;&gt; ~/.ssh/authorized_keys 把中文换成你的公钥</div></pre></td></tr></table></figure></p>
-<p>成功会直接进入终端，失败会一直弹出输入密码。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;启用ssh&quot;&gt;&lt;a href=&quot;#启用ssh&quot; class=&quot;headerlink&quot; title=&quot;启用ssh&quot;&gt;&lt;/a&gt;启用ssh&lt;/h1&gt;&lt;p&gt;termux的sshd默认监听8022端口，并且只支持密钥登陆&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apt install openssl-tool openssh -y&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sshd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;netstat -ntlp |grep sshd&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
